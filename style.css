@@ -8,7 +8,7 @@ h1 {
 /* Päises (<header>) asuva h1 pealkirja stiilid */
 header h1 {
     padding: 5%; /* Sise-eraldus */
-    font-variant: small-caps; /* Väikesed suurtähed (parandatud: front -> font) */
+    font-variant: small-caps; /* Väikesed suurtähed */
     border-bottom: 2px dotted orange; /* Punktiohjaga alumine piirjoon */
 }
 
@@ -22,28 +22,35 @@ header {
 
 /* Veebilehe jaluse (<footer>) stiilid */
 footer {
-    width:100%;
-    padding: 5%; /* Sise-eraldus */
+    width: 100%;
+    padding: 2%; /* Sise-eraldus */
     background-color: floralwhite; /* Taustavärv */
-    font-variant: small-caps; /* Väikesed suurtähed (parandatud: front -> font) */
+    font-variant: small-caps; /* Väikesed suurtähed */
     border-top: 2px dotted orange; /* Punktiohjaga ülemine piirjoon */
     position: fixed;
-    left:0;
-    bottom:o;
+    left: 0;
+    bottom: 0;
+}
+
+/* Jaluse lingi stiilid (TTHK link) */
+footer a {
+    color: orangered;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
 
 /* Esimene sektsioon (#kast1) */
-section#kast1 img{
+section#kast1 {
     border: 1px groove lightgray; /* Reljeefne hall piirjoon */
     width: 25%; /* Laius */
     margin: 5px; /* Välis-eraldus */
     padding: 1%; /* Sise-eraldus */
     border-radius: 30px 120px 30px 120px; /* Nurkade ümardamine */
     text-align: center; /* Teksti joondamine keskele */
-    background-color: red;
-    position: absolute;
-    left: 0;
-    top: 250px;
 }
 
 /* Teine sektsioon (#kast2) */
@@ -54,10 +61,6 @@ section#kast2 {
     padding: 1%; /* Sise-eraldus */
     border-radius: 30px 120px 30px 120px; /* Nurkade ümardamine */
     text-align: center; /* Teksti joondamine keskele */
-    background-color: green;
-    position: absolute;
-    left: 300px;
-    top: 200px;
 }
 
 /*********** NAVIGATSIOON (NAV) **********/
@@ -85,17 +88,53 @@ nav ul li a {
     display: block;
     color: red; /* Teksti värv */
     text-decoration: none; /* Eemaldab lingi allajoonimise */
-    padding: 10px 20px; /* Sise-eraldus (protsentide asemel on px menüüs stabiilsem) */
+    padding: 10px 20px; /* Sise-eraldus */
     text-align: center;
-    border-left: 2px solid gold; /* Parandatud: lisatud paksus ja stiil */
+    border-left: 2px solid gold; /* Vasak piirjoon */
 }
 
 /* Lingi efekt, kui hiirega peale liikuda */
-nav ul li a:hover { /* Parandatud trügiviga: uli -> ul */
+nav ul li a:hover {
     background-color: orange; /* Taust muutub oranžiks */
 }
 
 /* Lehe põhisisu plokk */
 main {
     margin-top: 20px; /* Kaugus päisest */
+    margin-bottom: 80px; /* Ruum jaluse (footer) jaoks */
+}
+
+/*********** MEEDIA LEHE STIILID (ÜLESANNE) **********/
+
+/* Suur kast - Grid paigutus (2 sektsiooni reas) */
+#suurkast {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Sektsioonide kujundus meedia lehel */
+#suurkast section {
+    border: 1px solid lightgray;
+    background-color: floralwhite;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+/* Pildigalerii stiilid - 3 pilti reas galerii sees */
+.galerii-pildid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-items: center;
+}
+
+.galerii-pildid img {
+    width: 100%;
+    max-width: 130px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid gray;
 }
