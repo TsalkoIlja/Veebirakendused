@@ -1,0 +1,101 @@
+/* Pealkirja h1 üldstiilid */
+h1 {
+    font-size: x-large; /* Teksti suurus */
+    font-family: Georgia, sans-serif; /* Varufont */
+    color: orangered; /* Teksti värv */
+}
+
+/* Päises (<header>) asuva h1 pealkirja stiilid */
+header h1 {
+    padding: 5%; /* Sise-eraldus */
+    font-variant: small-caps; /* Väikesed suurtähed (parandatud: front -> font) */
+    border-bottom: 2px dotted orange; /* Punktiohjaga alumine piirjoon */
+}
+
+/* Veebilehe päise (<header>) stiilid */
+header {
+    background-color: floralwhite; /* Taustavärv */
+    background-image: url("Täht.png"); /* Taustapilt */
+    background-repeat: no-repeat; /* Taustapilti ei korrata */
+    background-position: center; /* Taustapilt asub keskel */
+}
+
+/* Veebilehe jaluse (<footer>) stiilid */
+footer {
+    width:100%;
+    padding: 5%; /* Sise-eraldus */
+    background-color: floralwhite; /* Taustavärv */
+    font-variant: small-caps; /* Väikesed suurtähed (parandatud: front -> font) */
+    border-top: 2px dotted orange; /* Punktiohjaga ülemine piirjoon */
+    position: fixed;
+    left:0;
+    bottom:o;
+}
+
+/* Esimene sektsioon (#kast1) */
+section#kast1 img{
+    border: 1px groove lightgray; /* Reljeefne hall piirjoon */
+    width: 25%; /* Laius */
+    margin: 5px; /* Välis-eraldus */
+    padding: 1%; /* Sise-eraldus */
+    border-radius: 30px 120px 30px 120px; /* Nurkade ümardamine */
+    text-align: center; /* Teksti joondamine keskele */
+    background-color: red;
+    position: absolute;
+    left: 0;
+    top: 250px;
+}
+
+/* Teine sektsioon (#kast2) */
+section#kast2 {
+    border: 1px dotted gray; /* Punktiohjaga hall piirjoon */
+    width: 25%; /* Laius */
+    margin: 5px; /* Välis-eraldus */
+    padding: 1%; /* Sise-eraldus */
+    border-radius: 30px 120px 30px 120px; /* Nurkade ümardamine */
+    text-align: center; /* Teksti joondamine keskele */
+    background-color: green;
+    position: absolute;
+    left: 300px;
+    top: 200px;
+}
+
+/*********** NAVIGATSIOON (NAV) **********/
+
+/* Navigatsiooniriba konteiner */
+nav {
+    padding: 10px; /* Sise-eraldus */
+    margin: 10px; /* Välis-eraldus */
+}
+
+/* Navigatsioonilisti liides */
+nav ul {
+    list-style-type: none; /* Eemaldab listi täpid */
+    margin: 0;
+    padding: 0;
+    background: green; /* Roheline taust */
+    text-align: center;
+    display: flex; /* Muudab menüü reasasetusega Flexboxiks */
+    flex-direction: row; /* Elemendid reas */
+    flex-wrap: wrap; /* Lubab murdmist uuele reale */
+}
+
+/* Menüü lingid */
+nav ul li a {
+    display: block;
+    color: red; /* Teksti värv */
+    text-decoration: none; /* Eemaldab lingi allajoonimise */
+    padding: 10px 20px; /* Sise-eraldus (protsentide asemel on px menüüs stabiilsem) */
+    text-align: center;
+    border-left: 2px solid gold; /* Parandatud: lisatud paksus ja stiil */
+}
+
+/* Lingi efekt, kui hiirega peale liikuda */
+nav ul li a:hover { /* Parandatud trügiviga: uli -> ul */
+    background-color: orange; /* Taust muutub oranžiks */
+}
+
+/* Lehe põhisisu plokk */
+main {
+    margin-top: 20px; /* Kaugus päisest */
+}
