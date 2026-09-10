@@ -1,12 +1,42 @@
-table{
+/* Общие стили для всех ячеек */
+td {
+    border: 1px solid black;
+    padding: 8px;
+}
 
- border: 1px solid black;
+/* 1. Стили для первой таблицы */
+#tabel1 {
+    border: 2px solid black;
     width: 30%;
-
     height: 100px;
     text-align: center;
+    background-color: #f0f0f0; /* Светло-серый фон */
+    margin-bottom: 20px;
+}
 
+/* Красный фон для ячейки с классом cell-a */
+.cell-a {
+    background-color: red;
+    color: white; /* Белый цвет текста для читаемости */
 }
-td{
-    border: 1px solid black;
+
+/* 2. Стили для второй таблицы (с объединенными ячейками) */
+#tabel2 {
+    border: 2px solid blue; /* Синяя рамка */
+    width: 50%;
+    height: 150px;
+    text-align: center;
+    background-color: #e6f2ff; /* Светло-синий фон */
+    margin-bottom: 20px;
 }
+
+/* 3. Стили для третьей таблицы */
+#tabel3 {
+    border: 2px solid green; /* Зеленая рамка */
+    width: 40%;
+    height: 120px;
+    text-align: center;
+    vertical-align: top;
+    background-color: #e6ffe6; /* Светло-зеленый фон */
+}
+
