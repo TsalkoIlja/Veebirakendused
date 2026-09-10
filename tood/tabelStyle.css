@@ -39,4 +39,11 @@ td {
     vertical-align: top;
     background-color: #e6ffe6; /* Светло-зеленый фон */
 }
+#tabel4 {
+    border: 2px solid purple;
+    width: 50%;
+    height: 200px;
+    text-align: center;
+    background-color: #f3e5f5; /* Светло-фиолетовый фон */
+}
 
