@@ -46,4 +46,12 @@ td {
     text-align: center;
     background-color: #f3e5f5; /* Светло-фиолетовый фон */
 }
+/* 5. Стили для спиральной таблицы */
+#tabel5 {
+    border: 2px solid orange;
+    width: 60%;
+    height: 300px;
+    text-align: center;
+    background-color: #fff3e0;
+}
 
