@@ -1,4 +1,9 @@
 /* Pealkirja h1 üldstiilid */
+body{
+    margin: 0;
+    padding: 0;
+}
+
 h1 {
     font-size: x-large; /* Teksti suurus */
     font-family: Georgia, sans-serif; /* Varufont */
