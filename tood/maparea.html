@@ -3,34 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>Map area</title>
+
 </head>
 <body>
-<h1>Map area kasutamine</h1>
 
-<!-- Картинка подключается к карте через usemap -->
-<img src="arvutipilt.png" alt="arvuti pilt" usemap="#arvuti">
+<h1>Map area kasutamine. Palun klikkige punaseid nuppe</h1>
+
+<!-- Картинка подключается к карте usemap -->
+<img src="arvutipilt.jpg" alt="Arvuti komplekt" usemap="#arvuti" width="1024" height="1024">
 
 <map name="arvuti">
-    <!-- 1. Зеленый кубик (многоугольник по точкам углов) -->
-    <area shape="poly" coords="665,104, 590,150, 650,220, 720,160" href="https://www.k-rauta.ee/p/kott-tool-cube-50-avocado-pop-fit-roheline-v/x94h" alt="roheline kuubik" target="_blank">
+    <!-- 1. Монитор -->
+    <area shape="rect" coords="63,213, 680,561" href="https://www.euronics.ee/ru/it/monitory/monitory/xg27aqngv/asus-rog-strix-pulsar-xg27aqngv-27-qhd-ips-360-gc-chernyj-monitor" alt="Monitor">
 
-    <!-- 2. Синий кубик (прямоугольная область: x1, y1, x2, y2) -->
-    <area shape="rect" coords="240,110, 315,205" href="https://majatohter.ee/tooted/puisteained/pigmendid/ultramariinsinine/" alt="sinine kuubik">
+    <!-- 2. Клавиатура -->
+    <area shape="poly" coords="251,686, 685,688, 703,764, 211,761" href="https://onoff.ee/et/klaviatuurid/134923-lorgar-azar-514-mehhaaniline-maenguriklaviatuur-mustus-9030240878-5291485015480.html" alt="Klaviatuur">
 
-    <!-- 3. Звезда или отдельная фигура (poly: x1,y1, x2,y2, x3,y3...) -->
-    <area shape="poly" coords="229,308, 260,308, 270,330, 280,308, 304,308, 285,350, 304,403, 229,403" href="https://et.wikipedia.org/wiki/T%C3%A4ht_%28heraldika%29" alt="täht">
+    <!-- 3. Мышь -->
+    <area shape="circle" coords="77,773,50" href="https://ergonoomikakeskus.ee/toode/ergonoomiline-hiirematt-20-mm/" alt="Hiir">
 
-    <area shape="poly" coords="117,131, 133,160, 162,160, 140,188, 150,218, 117,200, 84,218, 94,188, 73,160, 101,160" href="https://4party.ee/ru/podveski/8456-paberist-taht-kuldne-70cm-5902230747951.html" alt="täht">
-    <area shape="poly" coords="581,315, X2,Y2, X3,Y3" href="http://tmath.ru/2/2/5/1/page.php" alt="kollane kolmnurk">
+    <!-- 4. Корпус компьютера -->
+    <area shape="rect" coords="680,188, 938,775" href="https://www.1a.ee/p/arvuti-korpus-aerocool-falcon-g-bk-v2-must-v/fhtb" alt="Arvutikorpus">
 
-    <area shape="rect" coords="386,400, 480,470" href="https://www.google.com/imgres?q=%D0%BE%D0%B1%D0%BB%D0%B0%D0%BA%D0%BE&imgurl=https%3A%2F%2Fi0.wp.com%2Fapptractor.ru%2Fwp-content%2Fuploads%2F2025%2F10%2F512x0w.webp%3Ffit%3D512%252C512%26ssl%3D1&imgrefurl=https%3A%2F%2Fapptractor.ru%2Finfo%2Fapps%2Fkakoe-oblako-bolshe-chem-opredelitel-oblakov.html&docid=Y9cObG6PDUcPcM&tbnid=VeIKfK2vz448vM&vet=12ahUKEwiP_szpjO6WAxWCJBAIHcJnN5AQnPAOegQIRBAA..i&w=512&h=512&hcb=2&ved=2ahUKEwiP_szpjO6WAxWCJBAIHcJnN5AQnPAOegQIRBAA" alt="mottepilv">
-    <!-- Прямоугольная область на красном кубике -->
-    <area shape="rect" coords="372,287, 455,337" href="https://kaup24.ee/et/mbel-ja-sisustus/elutoamoobel/kott-toolid-ja-tumbad/tumba-qubo-cube-25-strawberry-pop-fit?id=16142599" alt="punane kuubik">alt="punane kuubik" target="_blank">
-    <area shape="rect" coords="388,207, 483,227" href="https://www.kulinagroup.ee/karbiga-jaamasin-lekue-1-8-l-punane/?srsltid=AfmBOoovHHGhg2F0qVIH1qZC4MjRScsO32fGwGYf4SLQAUUBOkUoawWL" alt="punane kuubik">
+    <!-- 5. Вентилятор -->
+    <area shape="circle" coords="877,678,40" href="https://kaup24.ee/ru/kompyutery-i-it-tehnika/kompyuternye-komponenty/kompyuternye-ventilyatory/lian-li-sl-inf-140-argb-reverse?id=22942153" alt="Ventilaator">
+
+    <!-- 6. Левая лестница на обоях -->
+    <area shape="poly" coords="100,444, 304,444, 300,520, 100,520" href="https://kaup24.ee/ru/domashniy-remont/rabochie-instrumenty/stremyanki/bytovaya-lestnitsa-5?id=43000" alt="Vasak trepp">
+
+    <!-- 7. Правая лестница на обоях -->
+    <area shape="poly" coords="466,451, 620,451, 620,520, 464,520" href="https://kaup24.ee/ru/domashniy-remont/rabochie-instrumenty/stremyanki/lestnitsa-mnogofunktsionalnaya-trehsektsionnaya-drabest-pro-3h10?id=5574946" alt="Parem trepp">
+
+    <!-- 8. Внутренняя страница монитора (Исправлены координаты: x1=615, y1=555, x2=655, y2=595) -->
+    <area shape="rect" coords="615,555, 655,595" href="monitor.html" alt="monitor">
+
+    <!-- 9. Мусорная корзина / кнопка -->
+    <area shape="poly" coords="840,850, 880,850, 880,890, 840,890" href="prygi.html" alt="prügikast">
 </map>
 
-
-<div>Palun tee klick hiirega pildi peal</div>
+<div>Palun tee klikk pildi (punane nupp) peal, et näha detailset infot.</div>
 
 </body>
 </html>
