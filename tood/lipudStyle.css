@@ -1,22 +1,145 @@
+
 #eesti {
     width: 330px;
     height: 210px;
     border: 1px solid lightgray;
-    border-spacing: 0;
     border-collapse: collapse;
-    margin: 20px 0 40px 0; /* Отступы сверху и снизу */
+    border-spacing: 0;
+    position: absolute;
+    top: 50px;
+    left: 40%;
+
 }
 
-/* pseudoelementide / pseudoklasside kasutamine */
-#eesti tr:nth-child(1) { /* 1. rida */
-    background-color: blue;
+
+#eesti tr:nth-child(1) { background-color: blue; }
+#eesti tr:nth-child(2) { background-color: black; }
+#eesti tr:nth-child(3) { background-color: white; }
+
+
+#taani {
+    width: 330px;
+    height: 210px;
+    border: 1px solid lightgray;
+    border-collapse: collapse;
+    border-spacing: 0;
+    position: absolute;
+    top: 320px;
+    left: 40%;
+
+    background-color: #C8102E;
 }
 
-#eesti tr:nth-child(2) { /* 2. rida */
-    background-color: black;
-}
 
-#eesti tr:nth-child(3) { /* 3. rida */
+#taani tr:nth-child(1),
+#taani tr:nth-child(3) { height: 90px; }
+#taani tr:nth-child(2) { height: 30px; }
+
+#taani tr td:nth-child(1) { width: 90px; }
+#taani tr td:nth-child(2) { width: 30px; }
+#taani tr td:nth-child(3) { width: 210px; }
+
+#taani tr td:nth-child(2),
+#taani tr:nth-child(2) td {
     background-color: white;
 }
+#prantsusmaa {
+    width: 330px;
+    height: 210px;
+    border: 1px solid lightgray;
+    border-collapse: collapse;
+    border-spacing: 0;
+    position: absolute;
+    top: 590px;
+    left: 45%;
+}
+
+
+#prantsusmaa td {
+    width: 110px;
+}
+
+
+#prantsusmaa tr td:nth-child(1) {
+    background-color: #002654;
+}
+
+#prantsusmaa tr td:nth-child(2) {
+    background-color: #FFFFFF;
+}
+
+#prantsusmaa tr td:nth-child(3) {
+    background-color: #ED2939;
+}
+#madagaskar {
+    width: 330px;
+    height: 210px;
+    border: 1px solid lightgray;
+    border-collapse: collapse;
+    border-spacing: 0;
+    position: absolute;
+    top: 860px;
+    left: 45%;
+}
+
+/* Белая вертикальная полоса слева (1/3 ширины) */
+#madagaskar tr:nth-child(1) td:nth-child(1) {
+    width: 110px;
+    background-color: #FFFFFF;
+}
+
+/* Ширина правой части (2/3 ширины) */
+#madagaskar tr:nth-child(1) td:nth-child(2),
+#madagaskar tr:nth-child(2) td:nth-child(1) {
+    width: 220px;
+    height: 105px;
+}
+
+/* Верхняя красная полоса справа */
+#madagaskar tr:nth-child(1) td:nth-child(2) {
+    background-color: #FC3D21;
+}
+
+/* Нижняя зеленая полоса справа */
+#madagaskar tr:nth-child(2) td:nth-child(1) {
+    background-color: #007E3A;
+}
+#island {
+    width: 330px;
+    height: 210px;
+    border: 1px solid lightgray;
+    border-collapse: collapse;
+    border-spacing: 0;
+    position: absolute;
+    top: 1130px;
+    left: 45%;
+    background-color: #003897;
+}
+
+#island tr:nth-child(1),
+#island tr:nth-child(5) { height: 75px; }
+#island tr:nth-child(2),
+#island tr:nth-child(4) { height: 15px; }
+#island tr:nth-child(3) { height: 30px; }
+
+#island tr td:nth-child(1),
+#island tr td:nth-child(5) { width: 105px; }
+#island tr td:nth-child(2),
+#island tr td:nth-child(4) { width: 15px; }
+#island tr td:nth-child(3) { width: 30px; }
+
+#island tr:nth-child(2) td,
+#island tr:nth-child(4) td,
+#island tr td:nth-child(2),
+#island tr td:nth-child(4) {
+    background-color: #FFFFFF;
+}
+
+#island tr:nth-child(3) td,
+#island tr td:nth-child(3) {
+    background-color: #D72828;
+}
+
+
+
 
