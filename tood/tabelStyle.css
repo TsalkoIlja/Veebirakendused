@@ -1,52 +1,52 @@
-/* Общие стили для всех ячеек */
+
 td {
     border: 1px solid black;
     padding: 8px;
 }
 
-/* 1. Стили для первой таблицы */
+
 #tabel1 {
     border: 2px solid black;
     width: 30%;
     height: 100px;
     text-align: center;
-    background-color: #f0f0f0; /* Светло-серый фон */
+    background-color: #f0f0f0;
     margin-bottom: 20px;
 }
 
-/* Красный фон для ячейки с классом cell-a */
+
 .cell-a {
     background-color: red;
-    color: white; /* Белый цвет текста для читаемости */
+    color: white;
 }
 
-/* 2. Стили для второй таблицы (с объединенными ячейками) */
+
 #tabel2 {
-    border: 2px solid blue; /* Синяя рамка */
+    border: 2px solid blue;
     width: 50%;
     height: 150px;
     text-align: center;
-    background-color: #e6f2ff; /* Светло-синий фон */
+    background-color: #e6f2ff;
     margin-bottom: 20px;
 }
 
-/* 3. Стили для третьей таблицы */
+
 #tabel3 {
-    border: 2px solid green; /* Зеленая рамка */
+    border: 2px solid green;
     width: 40%;
     height: 120px;
     text-align: center;
     vertical-align: top;
-    background-color: #e6ffe6; /* Светло-зеленый фон */
+    background-color: #e6ffe6;
 }
 #tabel4 {
     border: 2px solid purple;
     width: 50%;
     height: 200px;
     text-align: center;
-    background-color: #f3e5f5; /* Светло-фиолетовый фон */
+    background-color: #f3e5f5;
 }
-/* 5. Стили для спиральной таблицы */
+
 #tabel5 {
     border: 2px solid orange;
     width: 60%;
@@ -54,4 +54,33 @@ td {
     text-align: center;
     background-color: #fff3e0;
 }
+#iseseisevtabel{
+    border-collapse: collapse;
+    width: 400px;
+    height: 300px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+td {
+    border: 2px solid black;
+}
+
+#iseseisevtabel tr:nth-child(1) td:nth-child(1) { background-color: #FFD1DC; }
+#iseseisevtabel tr:nth-child(1) td:nth-child(2) { background-color: #FFDFBA; }
+#iseseisevtabel tr:nth-child(1) td:nth-child(3) { background-color: #FFFFBA; }
+#iseseisevtabel tr:nth-child(1) td:nth-child(4) { background-color: #BAFFC9; }
+
+
+#iseseisevtabel tr:nth-child(2) td:nth-child(1) { background-color: #BAE1FF; }
+#iseseisevtabel tr:nth-child(2) td:nth-child(2) { background-color: #E8AEFF; }
+
+
+#iseseisevtabel tr:nth-child(3) td:nth-child(1) { background-color: #C9CCFF; }
+#iseseisevtabel tr:nth-child(3) td:nth-child(2) { background-color: #FFC6FF; }
+#iseseisevtabel tr:nth-child(3) td:nth-child(3) { background-color: #BDB2FF; }
+#iseseisevtabel tr:nth-child(3) td:nth-child(4) { background-color: #FFADAD; }
+
+#iseseisevtabel tr:nth-child(4) td:nth-child(1) { background-color: #FDFFB6; }
 
