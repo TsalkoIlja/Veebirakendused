@@ -3,19 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <title>Detailne vaade: Prügikast</title>
-
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <h1>Prügikasti detailne kirjeldus</h1>
 
-<div class="kirjeldus-kast">
-    <h2>Digitaalne prügikast (Trash / Recycle Bin)</h2>
-    <img src="arvutipilt.jpg" alt="Prügikast" class="detail-pilt">
+<!-- Peamine pildikaart -->
+<img src="arvutipilt.jpg" alt="Arvuti komplekt" usemap="#arvuti" width="1024" height="1024">
+
+<map name="arvuti">
+    <!-- 1. Ventilaator  -->
+    <area shape="circle" coords="865,655,50" href="ventilaator.html" alt="Ventilaator">
+
+    <!-- 2. Vasak trepp  -->
+    <area shape="poly" coords="250,420, 350,420, 350,468, 250,468" href="trepp_vasak.html" alt="Vasak trepp">
+
+    <!-- 3. Parem trepp  -->
+    <area shape="poly" coords="421,422, 521,422, 521,472, 421,472" href="trepp_parem.html" alt="Parem trepp">
+
+    <!-- 4. Arvutikorpus  -->
+    <area shape="rect" coords="680,188,938,775" href="korpus.html" alt="Arvutikorpus">
+
+    <!-- 5. Monitor  -->
+    <area shape="rect" coords="63,213,640,576" href="monitor.html" alt="Monitor">
+
+    <!-- 6. Klaviatuur  -->
+    <area shape="poly" coords="211,686, 685,686, 703,776, 211,776" href="klaviatuur.html" alt="Klaviatuur">
+
+    <!-- 7. Hiir -->
+    <area shape="circle" coords="77,773,50" href="hiir.html" alt="Hiir">
+
+    <!-- 8. Prügikast -->
+    <area shape="poly" coords="840,850, 880,850, 880,890, 840,890" href="prygi.html" alt="Prügikast">
+</map>
+
+<!-- Esiletõstetud kirjeldus koos eraldi pildiga -->
+<div class="kirjeldus-kast esiletostetud">
+    <h2>Füüsiline prügikast töökohal</h2>
+
+    <!-- Eraldi pilt specifikalt selle objekti kohta -->
+    <img src="prygi.jpg" alt="Prügikast lähedalt" class="detail-pilt">
+
     <p>
-        Prügikast on operatsioonisüsteemi oluline komponent, kuhu paigutatakse ajutiselt kõik kustutatud failid ja kaustad.
-        See annab kasutajale võimaluse kogemata eemaldatud andmeid kiiresti ja turvaliselt tagasi taastada.
-        Ketta ruumi vabastamiseks tuleb prügikast aeg-ajalt lõplikult tühjendada.
+        Pildil on kujutatud töölaua all asuv füüsiline prügikast, mis on mõeldud paberijäätmete ja muu prügi viskamiseks.
+        See on tööruumi hügieeni ja korra hoidmiseks väga oluline element, sest see aitab vältida laua ülekoormamist mittevajalike asjadega.
+        Puhas ja korrastatud töökoht soodustab paremat keskendumist ning suurendab igapäevast tööefektiivsust.
     </p>
 </div>
 

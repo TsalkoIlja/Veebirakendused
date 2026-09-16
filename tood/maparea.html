@@ -3,45 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <title>Map area</title>
-
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <h1>Map area kasutamine. Palun klikkige punaseid nuppe</h1>
 
-<!-- Картинка подключается к карте usemap -->
+<!-- Pilt on ühendatud kaardiga usemap atribuudi abil -->
 <img src="arvutipilt.jpg" alt="Arvuti komplekt" usemap="#arvuti" width="1024" height="1024">
 
 <map name="arvuti">
-    <!-- 1. Монитор -->
-    <area shape="rect" coords="63,213, 680,561" href="https://www.euronics.ee/ru/it/monitory/monitory/xg27aqngv/asus-rog-strix-pulsar-xg27aqngv-27-qhd-ips-360-gc-chernyj-monitor" alt="Monitor">
+    <!-- 1. Ventilaator  -->
+    <area shape="circle" coords="865,655,50" href="ventilaator.html" alt="Ventilaator">
 
-    <!-- 2. Клавиатура -->
-    <area shape="poly" coords="251,686, 685,688, 703,764, 211,761" href="https://onoff.ee/et/klaviatuurid/134923-lorgar-azar-514-mehhaaniline-maenguriklaviatuur-mustus-9030240878-5291485015480.html" alt="Klaviatuur">
+    <!-- 2. Vasak trepp  -->
+    <area shape="poly" coords="250,420, 350,420, 350,468, 250,468" href="trepp_vasak.html" alt="Vasak trepp">
 
-    <!-- 3. Мышь -->
-    <area shape="circle" coords="77,773,50" href="https://ergonoomikakeskus.ee/toode/ergonoomiline-hiirematt-20-mm/" alt="Hiir">
+    <!-- 3. Parem trepp  -->
+    <area shape="poly" coords="421,422, 521,422, 521,472, 421,472" href="trepp_parem.html" alt="Parem trepp">
 
-    <!-- 4. Корпус компьютера -->
-    <area shape="rect" coords="680,188, 938,775" href="https://www.1a.ee/p/arvuti-korpus-aerocool-falcon-g-bk-v2-must-v/fhtb" alt="Arvutikorpus">
+    <!-- 4. Arvutikorpus  -->
+    <area shape="rect" coords="680,188,938,775" href="korpus.html" alt="Arvutikorpus">
 
-    <!-- 5. Вентилятор -->
-    <area shape="circle" coords="877,678,40" href="https://kaup24.ee/ru/kompyutery-i-it-tehnika/kompyuternye-komponenty/kompyuternye-ventilyatory/lian-li-sl-inf-140-argb-reverse?id=22942153" alt="Ventilaator">
+    <!-- 5. Monitor  -->
+    <area shape="rect" coords="63,213,640,576" href="monitor.html" alt="Monitor">
 
-    <!-- 6. Левая лестница на обоях -->
-    <area shape="poly" coords="100,444, 304,444, 300,520, 100,520" href="https://kaup24.ee/ru/domashniy-remont/rabochie-instrumenty/stremyanki/bytovaya-lestnitsa-5?id=43000" alt="Vasak trepp">
+    <!-- 6. Klaviatuur  -->
+    <area shape="poly" coords="211,686, 685,686, 703,776, 211,776" href="klaviatuur.html" alt="Klaviatuur">
 
-    <!-- 7. Правая лестница на обоях -->
-    <area shape="poly" coords="466,451, 620,451, 620,520, 464,520" href="https://kaup24.ee/ru/domashniy-remont/rabochie-instrumenty/stremyanki/lestnitsa-mnogofunktsionalnaya-trehsektsionnaya-drabest-pro-3h10?id=5574946" alt="Parem trepp">
+    <!-- 7. Hiir -->
+    <area shape="circle" coords="77,773,50" href="hiir.html" alt="Hiir">
 
-    <!-- 8. Внутренняя страница монитора (Исправлены координаты: x1=615, y1=555, x2=655, y2=595) -->
-    <area shape="rect" coords="615,555, 655,595" href="monitor.html" alt="monitor">
-
-    <!-- 9. Мусорная корзина / кнопка -->
-    <area shape="poly" coords="840,850, 880,850, 880,890, 840,890" href="prygi.html" alt="prügikast">
+    <!-- 8. Prügikast -->
+    <area shape="poly" coords="840,850, 880,850, 880,890, 840,890" href="prygi.html" alt="Prügikast">
 </map>
 
-<div>Palun tee klikk pildi (punane nupp) peal, et näha detailset infot.</div>
+<div>Palun tee klikk pildi peal, et näha detailset infot.</div>
 
 </body>
 </html>
