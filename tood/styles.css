@@ -10,6 +10,13 @@ body {
     gap: 25px;
     align-items: start;
 }
+.juhend {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    grid-column: 1 / -1;
+}
 
 .tagasilink {
     grid-column: 1;
@@ -35,11 +42,11 @@ body {
 
 h1 {
     color: #2c3e50;
-    font-size: 32px;
-    font-weight: bold;
-    margin-top: 15px;
-    margin-bottom: 25px;
+    grid-column: 1 / -1;
+    grid-row: 2;
     text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
 }
 
 img[usemap],
