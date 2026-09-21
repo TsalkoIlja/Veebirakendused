@@ -174,3 +174,77 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+/* --- TÄIENDAVAD VÄRVIREEGLID (LISATUD LÕPPU) --- */
+
+/* Lehe erksavärviline taust */
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+}
+
+/* Pealkirjade värvid */
+h1 {
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+div {
+    color: #f1f1f1;
+}
+
+/* Tabeli erksam väljanägemine */
+table {
+    background-color: #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Tabeliridade värvid */
+tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+tr:nth-child(even) {
+    background-color: #f0f4f8;
+}
+
+/* Fieldset ja Legend värvid */
+fieldset {
+    background-color: #f7fafc;
+    border-color: #b794f4;
+}
+
+legend {
+    color: #6b46c1;
+}
+
+/* Sisendväljade aktiivse oleku (fookuse) värviefektid */
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=date]:focus,
+input[type=number]:focus,
+select:focus {
+    outline: none;
+    border-color: #805ad5;
+    box-shadow: 0 0 6px rgba(128, 90, 213, 0.5);
+    background-color: #faf5ff;
+}
+
+/* Liuguri ja raadionuppude värviaktsent */
+input[type=range],
+input[type=radio],
+input[type=checkbox] {
+    accent-color: #805ad5;
+}
+
+/* Lingi värv heledal/tumedal taustal */
+a {
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+a:hover {
+    color: #e9d8fd;
+}
