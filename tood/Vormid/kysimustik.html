@@ -2,67 +2,139 @@
 <html lang="et">
 <head>
     <meta charset="UTF-8">
-    <title>muusika küsimustik</title>
+    <title>Muusika küsimustik</title>
+    <link rel="stylesheet" href="vormStyle.css.">
 </head>
 <body>
 <h1>Muusika küsimustik</h1>
 <div>HTML vormid ja nupud</div>
+<br>
+
 <form action="#">
-    <!-- c + tab komentaar -->
-    <label for="nimi">Nimi</label>
-    <input type="text"  id="nimi" placeholder="Ilja">
-    <label for="stiil">Vali meeldivaim muusikastiil</label>
-    <br>
-    <select name="stiil" id="stiil">
-        <option value="vali">vali..</option>
-        <option value="hiphop">hiphop</option>
-        <option value="kantri">kantri</option>
-        <option value="rock">rock</option>
-        <option value="metal">metal</option>
-        <option value="jazz">jazz</option>
+    <table border="1" cellpadding="8" cellspacing="0">
+        <!-- Nimi valik -->
+        <tr>
+            <td>
+                <label for="nimi">Nimi</label>
+            </td>
+            <td>
+                <input type="text" id="nimi" name="nimi" placeholder="Ilja" />
+            </td>
+        </tr>
 
+        <!-- Muusikastiili valik -->
+        <tr>
+            <td>
+                <label for="stiil">Vali meeldivaim muusikastiil</label>
+            </td>
+            <td>
+                <select name="stiil" id="stiil">
+                    <option value="vali">vali...</option>
+                    <option value="hiphop">hiphop</option>
+                    <option value="kantri">kantri</option>
+                    <option value="rock">rock</option>
+                    <option value="metal">metal</option>
+                </select>
+            </td>
+        </tr>
 
-    </select>
-    <br>
-    <!-- raadio nupud -->
-    <strong>
-        <input type="radio" name="platvorm" id = "spotify">
-        <label for="spotify">Spotify</label>
-        <br>
-        <input type="radio" name="platvorm" id = "raadio">
-        <label for="raadio">raadio</label>
-        <br>
-        <input type="radio" name="platvorm" id = "vinüüplaat">
-        <label for="vinüüplaat">vinüüplaat</label>
-        <br>
+        <!-- Platvormi valik (raadionupud) -->
+        <tr>
+            <td>
+                <span>Kuulamise platvorm</span>
+            </td>
+            <td>
+                <input type="radio" name="platvorm" id="spotify" value="spotify"/>
+                <label for="spotify">Spotify</label>
+                <br>
+                <input type="radio" name="platvorm" id="radio" value="radio"/>
+                <label for="radio">Raadio</label>
+                <br>
+                <input type="radio" name="platvorm" id="vinüülplaat" value="vinyyl"/>
+                <label for="vinüülplaat">Vinüülplaat</label>
+            </td>
+        </tr>
 
-    </strong>
+        <!-- Lemmikansamblite valik (märkeruudud) -->
+        <tr>
+            <td>
+                <span>Lemmik ansambel</span>
+            </td>
+            <td>
+                <fieldset>
+                    <legend>Tee oma valikud</legend>
+                    <input type="checkbox" name="lemmikud" id="MaxReboBand" value="MaxReboBand">
+                    <label for="MaxReboBand">Max Rebo Band (Star Wars)</label>
+                    <br>
+                    <input type="checkbox" name="lemmikud" id="ModalNodes" value="ModalNodes">
+                    <label for="ModalNodes">Figrin D'an and the Modal Nodes (Star Wars)</label>
+                    <br>
+                    <input type="checkbox" name="lemmikud" id="Metallica" value="Metallica">
+                    <label for="Metallica">Metallica</label>
+                    <br>
+                    <input type="checkbox" name="lemmikud" id="Rammstein" value="Rammstein">
+                    <label for="Rammstein">Rammstein</label>
+                </fieldset>
+            </td>
+        </tr>
 
-    <!-- check box -->
-    <fieldset>
-        <legend>Tee oma valikud - lemmik ansambled</legend>
-        <input type="checkbox" name = "lemmikud" id = "rollingstones">
-        <label for="rollingstones">Rolling stones</label>
-        <br>
-        <input type="checkbox" name = "lemmikud" id = "systemofdown">
-        <label for="systemofdown">System of Down</label>
-        <br>
-        <input type="checkbox" name = "lemmikud" id = "metallic">
-        <label for="metallic">Metallic</label>
-        <br>
-        <input type="checkbox" name = "lemmikud" id = "Lifilover">
-        <label for="Lifilover">Lif i lover</label>
-        <br>
+        <!-- Tundide vahemik (liugur) -->
+        <tr>
+            <td>
+                <label for="tund">Mitu tundi päevas sa kuulad muusikat?</label>
+            </td>
+            <td>
+                0 <input type="range" id="tund" name="tund" min="0" max="24" value="12"> 24
+            </td>
+        </tr>
 
-    </fieldset>
+        <!-- Täiendavad sisendväljad (iga väli eraldi reas) -->
+        <tr>
+            <td>
+                <label for="varv">Lemmikvärv:</label>
+            </td>
+            <td>
+                <input type="color" id="varv" name="varv">
+            </td>
+        </tr>
 
-    <!--range -->
-    <label for="tund">
-        Mitu tundi päevas sa kuulad muusikat?
-    </label>
-    <br>
-    0<input type="range" id = "tund" min="0" max="24" value="">24
+        <tr>
+            <td>
+                <label for="fail">Laadi fail:</label>
+            </td>
+            <td>
+                <input type="file" id="fail" name="fail">
+            </td>
+        </tr>
 
-    </form>
+        <tr>
+            <td>
+                <label for="e-post">E-post:</label>
+            </td>
+            <td>
+                <input type="email" id="e-post" name="e-post" placeholder="iljatsalko9@gmail.com">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="kuupaev">Sünnipäev:</label>
+            </td>
+            <td>
+                <input type="date" id="kuupaev" name="kuupaev">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="vanus">Vanus:</label>
+            </td>
+            <td>
+                <input type="number" id="vanus" name="vanus" min="17" max="18" value="17">
+            </td>
+        </tr>
+    </table>
+</form>
+
 </body>
 </html>
