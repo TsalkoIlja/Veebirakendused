@@ -178,10 +178,11 @@ function puhasta() {
     vastus3.innerHTML = "";
     vastus3.style.backgroundColor = "";
     vastus4.innerHTML = "";
+    vastus4.style.backgroundColor = "";
     vastus5.innerHTML = "";
-    if (vastusArvamus) vastusArvamus.innerHTML = "";
-    if (vastusRaadio) vastusRaadio.innerHTML = "";
-    if (vastusJaamad) vastusJaamad.innerHTML = "";
+    vastusArvamus.innerHTML = "";
+    vastusRaadio.innerHTML = "";
+    vastusJaamad.innerHTML = "";
     vastuskoik.innerHTML = "";
 }
 
