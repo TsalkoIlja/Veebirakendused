@@ -22,62 +22,22 @@
                 <input type="text" id="nimi" name="nimi" placeholder="Ilja" oninput="nimiLugemineKastist()">
             </td>
             <td>
-                <div id= "vastus1"></div>
+                <div id="vastus1"></div>
             </td>
         </tr>
 
-        <!-- Muusikastiili valik -->
+        <!-- Muusikud/ansamblid (Checkbox) -->
         <tr>
             <td>
-                <label for="stiil">Vali meeldivaim muusikastiil</label>
-            </td>
-            <td>
-                <select name="stiil" id="stiil" onchange="selectValik">
-                    <option value="vali">vali...</option>
-                    <option value="hiphop">hiphop</option>
-                    <option value="kantri">kantri</option>
-                    <option value="rock">rock</option>
-                    <option value="metal">metal</option>
-                </select>
-            </td>
-            <td>
-                <div id = "vastus5"></div>
-            </td>
-        </tr>
-
-        <!-- Platvormi valik (raadionupud) -->
-        <tr>
-            <td>
-                <span>Kuulamise platvorm</span>
-            </td>
-            <td>
-                <input type="radio" name="platvorm" id="spotify" value="spotify"  onclick="raadioValik()"/>
-                <label for="spotify">Spotify</label>
-                <br>
-                <input type="radio" name="platvorm" id="radio" value="radio" onclick="raadioValik()"/>
-                <label for="radio">Raadio</label>
-                <br>
-                <input type="radio" name="platvorm" id="vinüülplaat" value="vinyyl" onclick="raadioValik()"/>
-                <label for="vinüülplaat">Vinüülplaat</label>
-            </td>
-            <td>
-                <div id="vastus2"></div>
-            </td>
-
-        </tr>
-
-        <!-- Lemmikansamblite valik (märkeruudud) -->
-        <tr>
-            <td>
-                <span>Lemmik ansambel</span>
+                <span>Milliseid muusikuid/ansambleid sa tead?</span>
             </td>
             <td>
                 <fieldset>
                     <legend>Tee oma valikud</legend>
-                    <input type="checkbox" name="lemmikud" id="MaxReboBand" value="MaxReboBand" onchange="checkboxValik()">
+                    <input type="checkbox" name="lemmikud" id="MaxReboBand" value="Max Rebo Band" onchange="checkboxValik()">
                     <label for="MaxReboBand">Max Rebo Band (Star Wars)</label>
                     <br>
-                    <input type="checkbox" name="lemmikud" id="ModalNodes" value="ModalNodes" onchange="checkboxValik()">
+                    <input type="checkbox" name="lemmikud" id="ModalNodes" value="Modal Nodes" onchange="checkboxValik()">
                     <label for="ModalNodes">Figrin D'an and the Modal Nodes (Star Wars)</label>
                     <br>
                     <input type="checkbox" name="lemmikud" id="Metallica" value="Metallica" onchange="checkboxValik()">
@@ -92,20 +52,104 @@
             </td>
         </tr>
 
-        <!-- Tundide vahemik (liugur) -->
+        <!-- Arvamus muusika kuulamisest koolis (Textarea) -->
+        <tr>
+            <td>
+                <label for="arvamus">Mida arvad muusika kuulamisest koolis?</label>
+            </td>
+            <td>
+                <textarea id="arvamus" name="arvamus" rows="3" cols="25" oninput="arvamusLugemine()"></textarea>
+            </td>
+            <td>
+                <div id="vastusArvamus"></div>
+            </td>
+        </tr>
+
+        <!-- Tundide vahemik (liugur / range) -->
         <tr>
             <td>
                 <label for="tund">Mitu tundi päevas sa kuulad muusikat?</label>
             </td>
             <td>
-                0 <input type="range" id="tund" name="tund" min="0" max="24" value="12" onchange="rangeValik"> 24
+                0 <input type="range" id="tund" name="tund" min="0" max="24" value="12" oninput="rangeValik()"> 24
             </td>
             <td>
                 <div id="vastus4"></div>
             </td>
         </tr>
 
-        <!-- Täiendavad sisendväljad (iga väli eraldi reas) -->
+        <!-- Kas sa kuulad raadiot? (Radio jah/ei) -->
+        <tr>
+            <td>
+                <span>Kas sa kuulad raadiot?</span>
+            </td>
+            <td>
+                <input type="radio" name="raadioKuulamine" id="raadioJah" value="jah" onclick="raadioKuulamineValik()"/>
+                <label for="raadioJah">Jah</label>
+                <br>
+                <input type="radio" name="raadioKuulamine" id="raadioEi" value="ei" onclick="raadioKuulamineValik()"/>
+                <label for="raadioEi">Ei</label>
+            </td>
+            <td>
+                <div id="vastusRaadio"></div>
+            </td>
+        </tr>
+
+        <!-- Raadiojaamad (Text) -->
+        <tr>
+            <td>
+                <label for="jaamad">Milliseid raadiojaamu oskad nimetada?</label>
+            </td>
+            <td>
+                <input type="text" id="jaamad" name="jaamad" placeholder="Sky Plus, Raadio 2" oninput="jaamadLugemine()">
+            </td>
+            <td>
+                <div id="vastusJaamad"></div>
+            </td>
+        </tr>
+
+        <!-- Muusikastiili valik (6 stiili) -->
+        <tr>
+            <td>
+                <label for="stiil">Millist muusikat sa kõige rohkem kuulad?</label>
+            </td>
+            <td>
+                <select name="stiil" id="stiil" onchange="selectValik()">
+                    <option value="vali">vali...</option>
+                    <option value="hiphop">hiphop</option>
+                    <option value="kantri">kantri</option>
+                    <option value="rock">rock</option>
+                    <option value="metal">metal</option>
+                    <option value="pop">pop</option>
+                    <option value="dnb">dnb</option>
+                </select>
+            </td>
+            <td>
+                <div id="vastus5"></div>
+            </td>
+        </tr>
+
+        <!-- Platvormi valik (raadionupud - sinu algsest koodist) -->
+        <tr>
+            <td>
+                <span>Kuulamise platvorm</span>
+            </td>
+            <td>
+                <input type="radio" name="platvorm" id="spotify" value="spotify" onclick="raadioValik()"/>
+                <label for="spotify">Spotify</label>
+                <br>
+                <input type="radio" name="platvorm" id="radio" value="radio" onclick="raadioValik()"/>
+                <label for="radio">Raadio</label>
+                <br>
+                <input type="radio" name="platvorm" id="vinüülplaat" value="vinyyl" onclick="raadioValik()"/>
+                <label for="vinüülplaat">Vinüülplaat</label>
+            </td>
+            <td>
+                <div id="vastus2"></div>
+            </td>
+        </tr>
+
+        <!-- Täiendavad sisendväljad -->
         <tr>
             <td>
                 <label for="varv">Lemmikvärv:</label>
@@ -113,6 +157,7 @@
             <td>
                 <input type="color" id="varv" name="varv">
             </td>
+            <td></td>
         </tr>
 
         <tr>
@@ -122,6 +167,7 @@
             <td>
                 <input type="file" id="fail" name="fail">
             </td>
+            <td></td>
         </tr>
 
         <tr>
@@ -131,6 +177,7 @@
             <td>
                 <input type="email" id="e-post" name="e-post" placeholder="iljatsalko9@gmail.com">
             </td>
+            <td></td>
         </tr>
 
         <tr>
@@ -140,6 +187,7 @@
             <td>
                 <input type="date" id="kuupaev" name="kuupaev">
             </td>
+            <td></td>
         </tr>
 
         <tr>
@@ -149,17 +197,20 @@
             <td>
                 <input type="number" id="vanus" name="vanus" min="17" max="18" value="17">
             </td>
+            <td></td>
         </tr>
+
+        <!-- Nupud "Puhasta" ja "Saada" -->
         <tr>
-        <td>
-            <input type="reset" value="Puhasta" onclick="puhasta()">
-        </td>
-        <td>
-            <input type="button" value="Näita/Loe andmed" onclick="naitaKoike()">
-        </td>
-        <td>
-            <div id = "vastuskoik"></div>
-        </td>
+            <td>
+                <input type="reset" value="Puhasta" onclick="puhasta()">
+            </td>
+            <td>
+                <input type="button" value="Saada" onclick="naitaKoike()">
+            </td>
+            <td>
+                <div id="vastuskoik"></div>
+            </td>
         </tr>
 
     </table>
