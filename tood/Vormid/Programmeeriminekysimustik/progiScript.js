@@ -70,12 +70,12 @@ function meeldibValik() {
     if (meeldibJah.checked) {
         vastusMeeldib.innerHTML = "Programmeerimine meeldib!";
         meeldibPilt.src = "smile.png";
-        meeldibPilt.style.display = "block";
+        meeldibPilt.classList.remove('peidetud'); // Показываем картинку
         tekst = "Jah";
     } else if (meeldibEi.checked) {
         vastusMeeldib.innerHTML = "Programmeerimine ei meeldi.";
         meeldibPilt.src = "kurb.png";
-        meeldibPilt.style.display = "block";
+        meeldibPilt.classList.remove('peidetud'); // Показываем картинку
         tekst = "Ei";
     }
 
@@ -144,6 +144,7 @@ function puhasta() {
     let vastusSoovitudKeel = document.getElementById('vastusSoovitudKeel');
     let vastuskoik = document.getElementById('vastuskoik');
     let meeldibPilt = document.getElementById('meeldibPilt');
+    meeldibPilt.classList.add('peidetud');
 
     vastusKeeled.innerHTML = "";
     vastusKeeled.style.backgroundColor = "";
