@@ -35,6 +35,7 @@ for (let i = 0; i < piltValik.length; i++) {
         }else{
         //alert('tee oma valiku')
     }
+
     }
 }
 

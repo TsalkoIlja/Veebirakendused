@@ -19,12 +19,15 @@ function raadioValik() {
 
     if (spotify.checked) {
         valik = spotify.value;
+        pilt.src="../images/spotify.png"
     }
     else if (radio.checked) {
         valik = radio.value;
+        pilt.src="../images/raadio.png"
     }
     else if (vinyyl.checked) {
         valik = vinyyl.value;
+        pilt.src="../images/vinüüplaat.png"
     }
 
     vastus2.innerHTML = "Valik: " + valik;
@@ -45,6 +48,7 @@ function checkboxValik() {
 
     if (MaxReboBand.checked) {
         valik2 += MaxReboBand.value + ', ';
+
     }
 
     if (ModalNodes.checked) {
