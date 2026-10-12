@@ -1,24 +1,45 @@
-section#yld{
+section#yld {
     display: flex;
     flex-direction: row;
+    gap: 10px;
+
 
 }
-section#kalk1{
-    border: 1pt solid grey;
+
+section#kalk1 {
+    border: 1pt solid #3b4a55;
     border-radius: 10px;
     width: 30%;
-    padding: 1px;
+    padding: 10px;
+    background: linear-gradient(to right, #000000, #d4e3ff 1px, #4b6b7e 110%);
 }
-section#kalk2{
-    border: 1pt solid grey;
+
+section#kalk2 {
+    border: 1pt solid #3b4a55;
     border-radius: 10px;
     width: 30%;
-    padding: 1px;
+    padding: 5px;
+    background-color: powderblue;
 }
-section#kalk3{
-    border: 1pt solid grey;
+
+section#kalk3 {
+    border: 1pt solid #3b4a55;
     border-radius: 10px;
     width: 30%;
-    padding: 1px;
+    padding: 5px;
+    background-color: sandybrown;
+}
+
+img#vastusepilt{
+    height: 100px;
+    width: 100px;
+}
+img#vastusepilt2{
+    height: 100px;
+    width: 100px;
+}
+img#vastusepilt3 {
+    height: 100px;
+    width: 100px;
 }
 
