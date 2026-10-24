@@ -40,20 +40,25 @@ console.log(auto.omadused);
 
 
 
-
 let autod = [
     { mark: "Toyota", mudel: "Corolla", aasta: 2007 },
     { mark: "Honda", mudel: "Civic", aasta: 2012 },
-    { mark: "Tesla", mudel: "Model 3", aasta: 2019 }
+    { mark: "Tesla", mudel: "Model 3", aasta: 2019 },
+    { mark: "Ford", mudel: "Focus", aasta: 2020 },
+    { mark: "BMW", mudel: "320i", aasta: 2015 }
 ];
 
-// Esimese auto eemaldamine
-autod.splice(0, 1);
-
-// Uue auto lisamine
-autod.splice(1, 0, { mark: "Audi", mudel: "A4", aasta: 2018 });
+// Autode sorteerimine aasta järgi
+autod.sort((a, b) => a.aasta - b.aasta);
 
 console.log(autod);
+
+
+
+
+
+
+
 
 
 
