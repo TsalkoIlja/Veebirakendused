@@ -86,4 +86,11 @@ td {
     border: 1px solid lawngreen;
     padding: 8px;
 }
+/* Veateated */
+.viga {
+    color: red;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 4px;
+}
 

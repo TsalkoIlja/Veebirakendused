@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <title>Programmeerimise küsimustik</title>
     <link rel="stylesheet" href="progiStyle.css">
-    <script src="progiScript.js"></script>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+    <script src="progiScript.js" defer></script>
 </head>
 <body>
 
 <h1>Programmeerimise küsimustik</h1>
-<div>HTML vormid ja nupud</div>
+<div>HTML vormid, nupud ja jQuery valideerimine</div>
 <br>
 
-<form action="#">
+<form id="progiVorm" action="#">
     <table>
         <!-- 1. Checkbox -->
         <tr>
@@ -20,20 +22,21 @@
                 <span>Milliseid programmeerimiskeeli sa tead?</span>
             </td>
             <td>
-                <input type="checkbox" name="keeled" id="js" value="JavaScript" onchange="keeledValik()">
+                <input type="checkbox" name="keeled" id="js" value="JavaScript">
                 <label for="js">JavaScript</label>
                 <br>
-                <input type="checkbox" name="keeled" id="py" value="Python" onchange="keeledValik()">
+                <input type="checkbox" name="keeled" id="py" value="Python">
                 <label for="py">Python</label>
                 <br>
-                <input type="checkbox" name="keeled" id="java" value="Java" onchange="keeledValik()">
+                <input type="checkbox" name="keeled" id="java" value="Java">
                 <label for="java">Java</label>
                 <br>
-                <input type="checkbox" name="keeled" id="cs" value="C#" onchange="keeledValik()">
+                <input type="checkbox" name="keeled" id="cs" value="C#">
                 <label for="cs">C#</label>
                 <br>
-                <input type="checkbox" name="keeled" id="php" value="PHP" onchange="keeledValik()">
+                <input type="checkbox" name="keeled" id="php" value="PHP">
                 <label for="php">PHP</label>
+                <div id="vigaKeeled" class="viga" style="color: red; display: none;">Palun vali vähemalt üks keel!</div>
             </td>
             <td>
                 <div id="vastusKeeled"></div>
@@ -46,7 +49,8 @@
                 <label for="arvamus">Mida arvad programmeerimise õppimisest?</label>
             </td>
             <td>
-                <textarea id="arvamus" name="arvamus" rows="3" cols="25" oninput="arvamusLugemine()"></textarea>
+                <textarea id="arvamus" name="arvamus" rows="3" cols="25"></textarea>
+                <div id="vigaArvamus" class="viga" style="color: red; display: none;">See väli on kohustuslik!</div>
             </td>
             <td>
                 <div id="vastusArvamus"></div>
@@ -59,7 +63,7 @@
                 <label for="tunnid">Mitu tundi nädalas tegeled programmeerimisega?</label>
             </td>
             <td>
-                0 <input type="range" id="tunnid" name="tunnid" min="0" max="40" value="10" oninput="tunnidValik()"> 40
+                0 <input type="range" id="tunnid" name="tunnid" min="0" max="40" value="10"> 40
             </td>
             <td>
                 <div id="vastusTunnid"></div>
@@ -72,16 +76,17 @@
                 <span>Kas sulle meeldib programmeerida?</span>
             </td>
             <td>
-                <input type="radio" name="meeldib" id="meeldibJah" value="smile.png" onclick="meeldibValik()">
+                <input type="radio" name="meeldib" id="meeldibJah" value="smile.png">
                 <label for="meeldibJah">Jah</label>
                 <br>
-                <input type="radio" name="meeldib" id="meeldibEi" value="kurb.png" onclick="meeldibValik()">
+                <input type="radio" name="meeldib" id="meeldibEi" value="kurb.png">
                 <label for="meeldibEi">Ei</label>
+                <div id="vigaMeeldib" class="viga" style="color: red; display: none;">Palun tee valik!</div>
             </td>
             <td>
                 <div id="vastusMeeldib"></div>
                 <br>
-                <img id="meeldibPilt" src="smile.png" alt="Smail" class="peidetud">
+                <img id="meeldibPilt" src="" alt="Smail" class="peidetud">
             </td>
         </tr>
 
@@ -91,7 +96,8 @@
                 <label for="tooriistad">Milliseid programmeerimisega seotud tööriistu oskad nimetada?</label>
             </td>
             <td>
-                <input type="text" id="tooriistad" name="tooriistad" placeholder="VS Code, GitHub" oninput="tooriistadLugemine()">
+                <input type="text" id="tooriistad" name="tooriistad" placeholder="VS Code, GitHub">
+                <div id="vigaTooriistad" class="viga" style="color: red; display: none;">Palun sisesta tööriistad!</div>
             </td>
             <td>
                 <div id="vastusTooriistad"></div>
@@ -104,7 +110,7 @@
                 <label for="soovitudKeel">Millist programmeerimiskeelt sooviksid kõige rohkem õppida?</label>
             </td>
             <td>
-                <select name="soovitudKeel" id="soovitudKeel" onchange="soovitudKeelValik()">
+                <select name="soovitudKeel" id="soovitudKeel">
                     <option value="vali">vali...</option>
                     <option value="JavaScript">JavaScript</option>
                     <option value="Python">Python</option>
@@ -113,6 +119,7 @@
                     <option value="PHP">PHP</option>
                     <option value="C++">C++</option>
                 </select>
+                <div id="vigaSoovitudKeel" class="viga" style="color: red; display: none;">Palun vali keel rippmenüüst!</div>
             </td>
             <td>
                 <div id="vastusSoovitudKeel"></div>
@@ -122,10 +129,10 @@
         <!-- Nupud "Puhasta" ja "Saada" -->
         <tr>
             <td>
-                <input type="reset" value="Puhasta" onclick="puhasta()">
+                <button type="reset" id="puhasta">Puhasta</button>
             </td>
             <td>
-                <input type="button" value="Saada" onclick="naitaKoike()">
+                <button type="submit" id="saada">Saada</button>
             </td>
             <td>
                 <div id="vastuskoik"></div>

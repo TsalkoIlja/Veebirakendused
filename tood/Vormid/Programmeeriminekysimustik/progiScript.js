@@ -1,120 +1,174 @@
-// 1. Checkbox valik (Programmeerimiskeeled)
+$(document).ready(function() {
+    // 1. Peidame vead alguses
+    $('.viga').hide();
+
+    // Reaalajas tagasiside väljade muutumisel
+    $('input[name="keeled"]').change(function() {
+        keeledValik();
+    });
+
+    $('#arvamus').on('input', function() {
+        arvamusLugemine();
+    });
+
+    $('#tunnid').on('input', function() {
+        tunnidValik();
+    });
+
+    $('input[name="meeldib"]').change(function() {
+        meeldibValik();
+    });
+
+    $('#tooriistad').on('input', function() {
+        tooriistadLugemine();
+    });
+
+    $('#soovitudKeel').change(function() {
+        soovitudKeelValik();
+    });
+
+    // Puhastusnupp
+    $('#puhasta').click(function() {
+        $('#progiVorm')[0].reset();
+        $('.viga').hide();
+        puhastaVastused();
+    });
+
+    // Vormi saatmise valideerimine (jQuery submit)
+    $('#progiVorm').submit(function(event) {
+        let valid = true;
+
+        // 1. Checkbox valideerimine
+        if ($('input[name="keeled"]:checked').length === 0) {
+            $('#vigaKeeled').show();
+            valid = false;
+        } else {
+            $('#vigaKeeled').hide();
+        }
+
+        // 2. Textarea valideerimine
+        if ($('#arvamus').val().trim() === "") {
+            $('#vigaArvamus').show();
+            valid = false;
+        } else {
+            $('#vigaArvamus').hide();
+        }
+
+        // 3. Radio valideerimine
+        if ($('input[name="meeldib"]:checked').length === 0) {
+            $('#vigaMeeldib').show();
+            valid = false;
+        } else {
+            $('#vigaMeeldib').hide();
+        }
+
+        // 4. Text (tööriistad) valideerimine
+        if ($('#tooriistad').val().trim() === "") {
+            $('#vigaTooriistad').show();
+            valid = false;
+        } else {
+            $('#vigaTooriistad').hide();
+        }
+
+        // 5. Select valideerimine
+        if ($('#soovitudKeel').val() === "vali" || $('#soovitudKeel').val() === "") {
+            $('#vigaSoovitudKeel').show();
+            valid = false;
+        } else {
+            $('#vigaSoovitudKeel').hide();
+        }
+
+        // Kui on vead, peatame vormi saatmise
+        if (!valid) {
+            event.preventDefault();
+        } else {
+            event.preventDefault(); // Ei lase lehel päriselt uuesti laadida, vaid näitab kokkuvõtet
+            naitaKoike();
+        }
+    });
+});
+
+// Abifunktsioonid reaalajas andmete kuvamiseks
 function keeledValik() {
-    let vastusKeeled = document.getElementById('vastusKeeled');
-    let js = document.getElementById('js');
-    let py = document.getElementById('py');
-    let java = document.getElementById('java');
-    let cs = document.getElementById('cs');
-    let php = document.getElementById('php');
+    let valikud = [];
+    $('input[name="keeled"]:checked').each(function() {
+        valikud.push($(this).val());
+    });
 
-    let valik = "";
-
-    if (js.checked) {
-        valik += js.value + ', ';
-    }
-    if (py.checked) {
-        valik += py.value + ', ';
-    }
-    if (java.checked) {
-        valik += java.value + ', ';
-    }
-    if (cs.checked) {
-        valik += cs.value + ', ';
-    }
-    if (php.checked) {
-        valik += php.value + ', ';
-    }
-
-    if (valik === "") {
-        vastusKeeled.innerHTML = "Tee oma valik!";
-        vastusKeeled.style.backgroundColor = "";
+    let vastusKeeled = $('#vastusKeeled');
+    if (valikud.length === 0) {
+        vastusKeeled.html("Tee oma valik!");
+        vastusKeeled.css("background-color", "");
+        return "";
     } else {
-        vastusKeeled.innerHTML = "Sinu valitud programmeerimiskeeled: " + valik;
-        vastusKeeled.style.backgroundColor = "lightgreen";
+        let tekst = valikud.join(', ');
+        vastusKeeled.html("Sinu valitud programmeerimiskeeled: " + tekst);
+        vastusKeeled.css("background-color", "lightgreen");
+        return tekst;
     }
-
-    return valik;
 }
 
-// 2. Textarea (Arvamus õppimisest)
 function arvamusLugemine() {
-    let vastusArvamus = document.getElementById('vastusArvamus');
-    let arvamus = document.getElementById('arvamus');
-
-    vastusArvamus.innerHTML = "Sinu arvamus: " + arvamus.value;
-    vastusArvamus.style.backgroundColor = "lightgreen";
-
-    return arvamus.value;
+    let arvamus = $('#arvamus').val();
+    let vastusArvamus = $('#vastusArvamus');
+    vastusArvamus.html("Sinu arvamus: " + arvamus);
+    vastusArvamus.css("background-color", "lightgreen");
+    return arvamus;
 }
 
-// 3. Range (Tunnid nädalas)
 function tunnidValik() {
-    let vastusTunnid = document.getElementById('vastusTunnid');
-    let tunnid = document.getElementById('tunnid');
-
-    vastusTunnid.innerHTML = "Tegeled programmeerimisega " + tunnid.value + " tundi nädalas.";
-    vastusTunnid.style.backgroundColor = "lightgreen";
-
-    return tunnid.value;
+    let tunnid = $('#tunnid').val();
+    let vastusTunnid = $('#vastusTunnid');
+    vastusTunnid.html("Tegeled programmeerimisega " + tunnid + " tundi nädalas.");
+    vastusTunnid.css("background-color", "lightgreen");
+    return tunnid;
 }
 
-// 4. Radio valik
 function meeldibValik() {
-    let vastusMeeldib = document.getElementById('vastusMeeldib');
-    let meeldibPilt = document.getElementById('meeldibPilt');
-    let meeldibJah = document.getElementById('meeldibJah');
-    let meeldibEi = document.getElementById('meeldibEi');
+    let vastusMeeldib = $('#vastusMeeldib');
+    let meeldibPilt = $('#meeldibPilt');
+    let valitud = $('input[name="meeldib"]:checked').val();
 
-    let tekst = "";
-
-    if (meeldibJah.checked) {
-        vastusMeeldib.innerHTML = "Programmeerimine meeldib!";
-        meeldibPilt.src = "smile.png";
-        meeldibPilt.classList.remove('peidetud'); // Показываем картинку
-        tekst = "Jah";
-    } else if (meeldibEi.checked) {
-        vastusMeeldib.innerHTML = "Programmeerimine ei meeldi.";
-        meeldibPilt.src = "kurb.png";
-        meeldibPilt.classList.remove('peidetud'); // Показываем картинку
-        tekst = "Ei";
+    if (valitud === "smile.png") {
+        vastusMeeldib.html("Programmeerimine meeldib!");
+        meeldibPilt.attr("src", "smile.png");
+        meeldibPilt.removeClass('peidetud');
+        vastusMeeldib.css("background-color", "lightgreen");
+        return "Jah";
+    } else if (valitud === "kurb.png") {
+        vastusMeeldib.html("Programmeerimine ei meeldi.");
+        meeldibPilt.attr("src", "kurb.png");
+        meeldibPilt.removeClass('peidetud');
+        vastusMeeldib.css("background-color", "lightgreen");
+        return "Ei";
     }
-
-    vastusMeeldib.style.backgroundColor = "lightgreen";
-
-    return tekst;
+    return "";
 }
 
-// 5. Text (Tööriistad)
 function tooriistadLugemine() {
-    let vastusTooriistad = document.getElementById('vastusTooriistad');
-    let tooriistad = document.getElementById('tooriistad');
-
-    vastusTooriistad.innerHTML = "Sinu nimetatud tööriistad: " + tooriistad.value;
-    vastusTooriistad.style.backgroundColor = "lightgreen";
-
-    return tooriistad.value;
+    let tooriistad = $('#tooriistad').val();
+    let vastusTooriistad = $('#vastusTooriistad');
+    vastusTooriistad.html("Sinu nimetatud tööriistad: " + tooriistad);
+    vastusTooriistad.css("background-color", "lightgreen");
+    return tooriistad;
 }
 
-// 6. Select valik (Soovitud keel)
 function soovitudKeelValik() {
-    let vastusSoovitudKeel = document.getElementById('vastusSoovitudKeel');
-    let soovitudKeel = document.getElementById('soovitudKeel');
+    let keel = $('#soovitudKeel').val();
+    let vastusSoovitudKeel = $('#vastusSoovitudKeel');
 
-    if (soovitudKeel.selectedIndex !== 0) {
-        vastusSoovitudKeel.innerHTML = "Sinu valik: " + soovitudKeel.value;
-        vastusSoovitudKeel.style.backgroundColor = "lightgreen";
+    if (keel !== "vali" && keel !== "") {
+        vastusSoovitudKeel.html("Sinu valik: " + keel);
+        vastusSoovitudKeel.css("background-color", "lightgreen");
+        return keel;
     } else {
-        vastusSoovitudKeel.innerHTML = "palun tee oma valik";
-        vastusSoovitudKeel.style.backgroundColor = "";
+        vastusSoovitudKeel.html("palun tee oma valik");
+        vastusSoovitudKeel.css("background-color", "");
+        return "";
     }
-
-    return soovitudKeel.value;
 }
 
-// Nupp "Saada" (Kokkuvõte)
 function naitaKoike() {
-    let vastuskoik = document.getElementById('vastuskoik');
-
     let keeled = keeledValik();
     let arvamus = arvamusLugemine();
     let tunnid = tunnidValik();
@@ -122,51 +176,18 @@ function naitaKoike() {
     let tooriistad = tooriistadLugemine();
     let soovitudKeel = soovitudKeelValik();
 
-    vastuskoik.innerHTML =
+    $('#vastuskoik').html(
         "<b>KOKKUVÕTE:</b><br>" +
         "Valitud keeled: " + keeled + "<br>" +
         "Arvamus: " + arvamus + "<br>" +
         "Tunde nädalas: " + tunnid + "<br>" +
         "Kas meeldib: " + meeldib + "<br>" +
         "Tööriistad: " + tooriistad + "<br>" +
-        "Soovitud keel: " + soovitudKeel;
-
-    vastuskoik.style.backgroundColor = "lightgreen";
+        "Soovitud keel: " + soovitudKeel
+    ).css("background-color", "lightgreen");
 }
 
-// Nupp "Puhasta"
-function puhasta() {
-    let vastusKeeled = document.getElementById('vastusKeeled');
-    let vastusArvamus = document.getElementById('vastusArvamus');
-    let vastusTunnid = document.getElementById('vastusTunnid');
-    let vastusMeeldib = document.getElementById('vastusMeeldib');
-    let vastusTooriistad = document.getElementById('vastusTooriistad');
-    let vastusSoovitudKeel = document.getElementById('vastusSoovitudKeel');
-    let vastuskoik = document.getElementById('vastuskoik');
-    let meeldibPilt = document.getElementById('meeldibPilt');
-    meeldibPilt.classList.add('peidetud');
-
-    vastusKeeled.innerHTML = "";
-    vastusKeeled.style.backgroundColor = "";
-
-    vastusArvamus.innerHTML = "";
-    vastusArvamus.style.backgroundColor = "";
-
-    vastusTunnid.innerHTML = "";
-    vastusTunnid.style.backgroundColor = "";
-
-    vastusMeeldib.innerHTML = "";
-    vastusMeeldib.style.backgroundColor = "";
-
-    vastusTooriistad.innerHTML = "";
-    vastusTooriistad.style.backgroundColor = "";
-
-    vastusSoovitudKeel.innerHTML = "";
-    vastusSoovitudKeel.style.backgroundColor = "";
-
-    vastuskoik.innerHTML = "";
-    vastuskoik.style.backgroundColor = "";
-
-    meeldibPilt.src = "";
-    meeldibPilt.style.display = "none";
+function puhastaVastused() {
+    $('#vastusKeeled, #vastusArvamus, #vastusTunnid, #vastusMeeldib, #vastusTooriistad, #vastusSoovitudKeel, #vastuskoik').html("").css("background-color", "");
+    $('#meeldibPilt').addClass('peidetud').attr("src", "");
 }
