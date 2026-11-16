@@ -48,6 +48,15 @@ footer a:hover {
     text-decoration: underline;
 }
 
+section#juhend {
+    border: 1px groove lightgray; /* Reljeefne hall piirjoon */
+    width: 25%; /* Laius */
+    margin: 5px; /* Välis-eraldus */
+    padding: 1%; /* Sise-eraldus */
+    border-radius: 30px 120px 30px 120px; /* Nurkade ümardamine */
+    text-align: center; /* Teksti joondamine keskele */
+}
+
 /* Esimene sektsioon (#kast1) */
 section#kast1 {
     border: 1px groove lightgray; /* Reljeefne hall piirjoon */

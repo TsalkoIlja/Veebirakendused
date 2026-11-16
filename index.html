@@ -1,11 +1,60 @@
-<!DOCTYPE html><!-- Dokumendi tüübi määratlus: HTML5 standard -->
-<html lang="et"><!-- HTML-dokumendi algus, lehe keel on eesti keel -->
+<!DOCTYPE html>
+<html lang="et">
 <head>
     <!-- Lehe tehniline informatsioon -->
     <meta charset="UTF-8"><!-- Märgistuse kooditabel märkide õigeks kuvamiseks -->
     <meta name="author" content="Ilja Tsalko"><!-- Nõue: autor (author) metaandmetes -->
     <title>Avaleht - Tsalko veebirakenduste aluste tööd</title><!-- Nõue: lehe pealkiri (title) -->
-    <link rel="stylesheet" href="style.css"><!-- Välise CSS-stiililehe ühendamine -->
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.14.2/jquery-ui.min.js"
+            integrity="sha256-mblSWfbYzaq/f+4akyMhE6XELCou4jbkgPv+JQPER2M="
+            crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        $(document).ready(function() {
+            $('#kuva').hide();
+
+            // Nupu "Peida" vajutamine
+            $('#peida').click(function() {
+                $('#kast1').hide(500);
+                $(this).hide();
+                $('#kuva').show();
+            });
+
+            // Nupu "kuva" vajutamine
+            $('#kuva').click(function() {
+                $('#kast1').show(500);
+                $(this).hide();
+                $('#peida').show();
+            });
+
+            // UUS EFEKT: slideToggle() - rulluv efekt teisele kastile (mida tunnis polnud)
+            $('#slideNupp').click(function() {
+                $('#kast2').slideToggle(600);
+            });
+
+            function start() {
+                $('#kast1').draggable();
+                $('#pilt').draggable();
+
+                $('#kast1').bind('drag', xyKoordinat);
+                $('#pilt').bind('drag', xyKoordinat);
+            }
+
+            function xyKoordinat(event, ui) {
+                let koht = ui.offset;
+                $('#vastus').html('x:' + koht.left + ' //// y:' + koht.top);
+            }
+
+            start();
+        });
+    </script>
 </head>
 
 <body>
@@ -35,19 +84,55 @@
     </nav>
 </header>
 
-<!-- Lehe põhisisu (Main) -->
+
 <main>
+
+    <div style="margin-bottom: 15px;">
+        <input type="button" value="--->" id="paremale"
+               onclick="$('#kast1, #kast2').animate({left: '500px'}, 1000);
+               $(this).hide();
+               $('#vasakule').show();">
+
+        <input type="button" value="<---" id="vasakule" style="display:none"
+               onclick="$('#kast1, #kast2').animate({left: '0px'}, 1000);
+               $(this).hide();
+               $('#paremale').show();">
+
+        <input type="button" value="Peida" id="peida">
+        <input type="button" value="kuva" id="kuva">
+        <!-- Uus nupp uue efekti jaoks -->
+        <input type="button" value="Slide efekt" id="slideNupp">
+    </div>
+
+
+    <div id="vastus" style="font-weight: bold; margin-bottom: 10px;"></div>
+
+    <section id="juhend">
+        <h2>Kasutusjuhend</h2>
+        <p>1. Kasuta nuppe "--->" ja "<---" plokkide liigutamiseks.</p>
+        <p>2. Kasuta nuppe "Peida" ja "Kuva" esimese kasti peitmiseks või näitamiseks.</p>
+        <p>3. Vajuta nuppu "Slide efekt", et teine kast rulluks kokku või lahti (uus efekt).</p>
+        <p>4. Lohista hiirega kasti või pilti, et näha koordinaate.</p>
+    </section>
+
     <!-- Esimene plokk / kast -->
-    <section id="kast1">
+    <section id="kast1" style="position: relative; left: 0;">
         <h2>Tere tulemast!</h2>
         <p>See on veebirakenduste aluste kursuse raames loodud koduleht.</p>
         <p>Siit lehelt leiad teavet minu õppetööde, kasulike materjalide ja meediafailide kohta.</p>
     </section>
 
     <!-- Teine plokk / kast -->
-    <section id="kast2">
+    <section id="kast2" style="position: relative; left: 0;">
         <h2>Info lehe kohta</h2>
         <p>Leht on struktureeritud HTML5 standardite kohaselt ning kujundatud isikupärase CSS-stiililehe abil.</p>
+    </section>
+
+    <!-- Lisatud pilt lohistamiseks -->
+    <section>
+        <img id="pilt"
+             src="https://png.pngtree.com/png-clipart/20241021/original/pngtree-transparent-background-solar-system-planets-png-image_16440166.png"
+             width="150" style="position: relative; cursor: grab;">
     </section>
 </main>
 
