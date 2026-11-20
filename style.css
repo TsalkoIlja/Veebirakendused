@@ -18,6 +18,7 @@ header h1 {
 }
 
 /* Veebilehe päise (<header>) stiilid */
+/* Veebilehe päise (<header>) stiilid */
 header {
     background-color: floralwhite; /* Taustavärv */
     background-image: url("Täht.png"); /* Taustapilt */
@@ -113,9 +114,12 @@ nav ul li a:hover {
 }
 
 /* Lehe põhisisu plokk */
+/* Lehe põhisisu plokk */
+
 main {
     margin-top: 20px; /* Kaugus päisest */
-    margin-bottom: 80px; /* Ruum jaluse (footer) jaoks */
+    margin-bottom: 120px; /* Увеличиваем запас снизу, чтобы окно было просторнее */
+    min-height: 70vh; /* Задает минимальную высоту, чтобы страница не сжималась */
 }
 
 /*********** MEEDIA LEHE STIILID (ÜLESANNE) **********/
