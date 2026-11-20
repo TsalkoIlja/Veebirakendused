@@ -78,7 +78,7 @@ section#kast2 {
     text-align: center; /* Teksti joondamine keskele */
 }
 
-/*********** NAVIGATSIOON (NAV) **********/
+/* NAVIGATSIOON (NAV) */
 
 /* Navigatsiooniriba konteiner */
 nav {
@@ -116,13 +116,14 @@ nav ul li a:hover {
 /* Lehe põhisisu plokk */
 /* Lehe põhisisu plokk */
 
+/* Lehe põhisisu plokk */
 main {
     margin-top: 20px; /* Kaugus päisest */
-    margin-bottom: 120px; /* Увеличиваем запас снизу, чтобы окно было просторнее */
-    min-height: 70vh; /* Задает минимальную высоту, чтобы страница не сжималась */
+    margin-bottom: 120px;
+    min-height: 70vh;
 }
 
-/*********** MEEDIA LEHE STIILID (ÜLESANNE) **********/
+/* MEEDIA LEHE STIILID (ÜLESANNE) */
 
 /* Suur kast - Grid paigutus (2 sektsiooni reas) */
 #suurkast {
