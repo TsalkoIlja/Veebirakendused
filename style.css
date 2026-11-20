@@ -22,8 +22,9 @@ header h1 {
 header {
     background-color: floralwhite; /* Taustavärv */
     background-image: url("Täht.png"); /* Taustapilt */
-    background-repeat: no-repeat; /* Taustapilti ei korrata */
+    background-repeat: repeat-x;
     background-position: center; /* Taustapilt asub keskel */
+    background-size: 100px;
 }
 
 /* Veebilehe jaluse (<footer>) stiilid */
